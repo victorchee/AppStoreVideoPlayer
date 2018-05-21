@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VCVideoControlView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRi-63-X2Z">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Zj-3L-186">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2D3-d8-i2V"/>
+                    </constraints>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFo-sK-N5C">
+                    <rect key="frame" x="169" y="84" width="36" height="30"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pYd-eh-Hcd">
+                        <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-a7-wRB">
+                                <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
+                                <state key="normal" title="PLAY"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="u1L-le-N7n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="VhR-a7-wRB" firstAttribute="top" secondItem="pYd-eh-Hcd" secondAttribute="top" id="HUj-5Y-2Ly"/>
+                            <constraint firstAttribute="trailing" secondItem="VhR-a7-wRB" secondAttribute="trailing" id="L3c-zz-jkV"/>
+                            <constraint firstItem="VhR-a7-wRB" firstAttribute="leading" secondItem="pYd-eh-Hcd" secondAttribute="leading" id="jed-3a-PJF"/>
+                            <constraint firstAttribute="bottom" secondItem="VhR-a7-wRB" secondAttribute="bottom" id="xSe-YX-MEl"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irN-ZS-iU5">
+                    <rect key="frame" x="0.0" y="154" width="375" height="44"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="djF-3z-xOX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byR-Dl-GVr">
+                                <rect key="frame" x="273" y="0.0" width="94" height="44"/>
+                                <state key="normal" title="FULLSCREEN"/>
+                                <connections>
+                                    <action selector="fullscreenButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="CAP-8u-a2D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="byR-Dl-GVr" secondAttribute="trailing" constant="8" id="3jh-2c-LzK"/>
+                            <constraint firstItem="byR-Dl-GVr" firstAttribute="top" secondItem="djF-3z-xOX" secondAttribute="top" id="7iD-88-H7a"/>
+                            <constraint firstAttribute="bottom" secondItem="byR-Dl-GVr" secondAttribute="bottom" id="RIX-m5-7pi"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="CuQ-pH-7lU"/>
+                    </constraints>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" red="0.16862745100000001" green="0.70588235290000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="yRi-63-X2Z" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="0wm-Gl-cGz"/>
+                <constraint firstItem="irN-ZS-iU5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="62e-Ia-mbu"/>
+                <constraint firstItem="irN-ZS-iU5" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="IVa-T2-k7w"/>
+                <constraint firstItem="CFo-sK-N5C" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="T2O-hh-fXJ"/>
+                <constraint firstItem="irN-ZS-iU5" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="TBn-mp-3ah"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yRi-63-X2Z" secondAttribute="trailing" id="Xf1-kh-7dw"/>
+                <constraint firstItem="yRi-63-X2Z" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rr4-lh-ZwT"/>
+                <constraint firstItem="CFo-sK-N5C" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="v5R-r5-jDM"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bottomControlView" destination="irN-ZS-iU5" id="JZk-lx-JtX"/>
+                <outlet property="centerControlView" destination="CFo-sK-N5C" id="PWT-cW-s6V"/>
+                <outlet property="fullscreenButton" destination="byR-Dl-GVr" id="tfe-i4-44u"/>
+                <outlet property="playButton" destination="VhR-a7-wRB" id="g1l-2Z-LFV"/>
+                <outlet property="topControlView" destination="yRi-63-X2Z" id="7Np-QF-loA"/>
+            </connections>
+            <point key="canvasLocation" x="39.5" y="288"/>
+        </view>
+    </objects>
+</document>

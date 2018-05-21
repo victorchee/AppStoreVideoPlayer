@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  CollectionViewCell.h
 //  VCVideoPlayer
 //
 //  Created by Victor Chee on 2018/5/21.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
-
+@interface CollectionViewCell : UICollectionViewCell
+@property (nonatomic, copy) void (^playButtonTappedHandler)(UIButton *sender);
 @end
-

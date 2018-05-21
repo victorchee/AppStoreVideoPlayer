@@ -8,27 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		F0FC752620B2EC83004EB5F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC752520B2EC83004EB5F1 /* AppDelegate.m */; };
-		F0FC752920B2EC83004EB5F1 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC752820B2EC83004EB5F1 /* FirstViewController.m */; };
-		F0FC752C20B2EC83004EB5F1 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC752B20B2EC83004EB5F1 /* SecondViewController.m */; };
 		F0FC752F20B2EC83004EB5F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FC752D20B2EC83004EB5F1 /* Main.storyboard */; };
 		F0FC753120B2EC85004EB5F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FC753020B2EC85004EB5F1 /* Assets.xcassets */; };
 		F0FC753420B2EC85004EB5F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FC753220B2EC85004EB5F1 /* LaunchScreen.storyboard */; };
 		F0FC753720B2EC85004EB5F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC753620B2EC85004EB5F1 /* main.m */; };
+		F0FC754020B2ECFA004EB5F1 /* VCVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC753F20B2ECFA004EB5F1 /* VCVideoPlayerView.m */; };
+		F0FC754320B2F2F2004EB5F1 /* VCVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC754220B2F2F2004EB5F1 /* VCVideoControlView.m */; };
+		F0FC754720B2F31C004EB5F1 /* VCVideoControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FC754620B2F31B004EB5F1 /* VCVideoControlView.xib */; };
+		F0FC754A20B2F7F9004EB5F1 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC754920B2F7F9004EB5F1 /* CollectionViewController.m */; };
+		F0FC754D20B2F84E004EB5F1 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC754C20B2F84E004EB5F1 /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F0FC752120B2EC83004EB5F1 /* VCVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FC752420B2EC83004EB5F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F0FC752520B2EC83004EB5F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F0FC752720B2EC83004EB5F1 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		F0FC752820B2EC83004EB5F1 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		F0FC752A20B2EC83004EB5F1 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		F0FC752B20B2EC83004EB5F1 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		F0FC752E20B2EC83004EB5F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0FC753020B2EC85004EB5F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0FC753320B2EC85004EB5F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0FC753520B2EC85004EB5F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0FC753620B2EC85004EB5F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F0FC753E20B2ECFA004EB5F1 /* VCVideoPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCVideoPlayerView.h; sourceTree = "<group>"; };
+		F0FC753F20B2ECFA004EB5F1 /* VCVideoPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCVideoPlayerView.m; sourceTree = "<group>"; };
+		F0FC754120B2F2F2004EB5F1 /* VCVideoControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCVideoControlView.h; sourceTree = "<group>"; };
+		F0FC754220B2F2F2004EB5F1 /* VCVideoControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCVideoControlView.m; sourceTree = "<group>"; };
+		F0FC754620B2F31B004EB5F1 /* VCVideoControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VCVideoControlView.xib; sourceTree = "<group>"; };
+		F0FC754820B2F7F9004EB5F1 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		F0FC754920B2F7F9004EB5F1 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		F0FC754B20B2F84E004EB5F1 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		F0FC754C20B2F84E004EB5F1 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +71,11 @@
 			children = (
 				F0FC752420B2EC83004EB5F1 /* AppDelegate.h */,
 				F0FC752520B2EC83004EB5F1 /* AppDelegate.m */,
-				F0FC752720B2EC83004EB5F1 /* FirstViewController.h */,
-				F0FC752820B2EC83004EB5F1 /* FirstViewController.m */,
-				F0FC752A20B2EC83004EB5F1 /* SecondViewController.h */,
-				F0FC752B20B2EC83004EB5F1 /* SecondViewController.m */,
+				F0FC753D20B2ECDC004EB5F1 /* Player */,
+				F0FC754820B2F7F9004EB5F1 /* CollectionViewController.h */,
+				F0FC754920B2F7F9004EB5F1 /* CollectionViewController.m */,
+				F0FC754B20B2F84E004EB5F1 /* CollectionViewCell.h */,
+				F0FC754C20B2F84E004EB5F1 /* CollectionViewCell.m */,
 				F0FC752D20B2EC83004EB5F1 /* Main.storyboard */,
 				F0FC753020B2EC85004EB5F1 /* Assets.xcassets */,
 				F0FC753220B2EC85004EB5F1 /* LaunchScreen.storyboard */,
@@ -74,6 +83,18 @@
 				F0FC753620B2EC85004EB5F1 /* main.m */,
 			);
 			path = VCVideoPlayer;
+			sourceTree = "<group>";
+		};
+		F0FC753D20B2ECDC004EB5F1 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				F0FC753E20B2ECFA004EB5F1 /* VCVideoPlayerView.h */,
+				F0FC753F20B2ECFA004EB5F1 /* VCVideoPlayerView.m */,
+				F0FC754120B2F2F2004EB5F1 /* VCVideoControlView.h */,
+				F0FC754220B2F2F2004EB5F1 /* VCVideoControlView.m */,
+				F0FC754620B2F31B004EB5F1 /* VCVideoControlView.xib */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +157,7 @@
 				F0FC753420B2EC85004EB5F1 /* LaunchScreen.storyboard in Resources */,
 				F0FC753120B2EC85004EB5F1 /* Assets.xcassets in Resources */,
 				F0FC752F20B2EC83004EB5F1 /* Main.storyboard in Resources */,
+				F0FC754720B2F31C004EB5F1 /* VCVideoControlView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,10 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0FC752C20B2EC83004EB5F1 /* SecondViewController.m in Sources */,
+				F0FC754A20B2F7F9004EB5F1 /* CollectionViewController.m in Sources */,
 				F0FC752620B2EC83004EB5F1 /* AppDelegate.m in Sources */,
 				F0FC753720B2EC85004EB5F1 /* main.m in Sources */,
-				F0FC752920B2EC83004EB5F1 /* FirstViewController.m in Sources */,
+				F0FC754320B2F2F2004EB5F1 /* VCVideoControlView.m in Sources */,
+				F0FC754020B2ECFA004EB5F1 /* VCVideoPlayerView.m in Sources */,
+				F0FC754D20B2F84E004EB5F1 /* CollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

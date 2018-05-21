@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  CollectionViewController.h
 //  VCVideoPlayer
 //
 //  Created by Victor Chee on 2018/5/21.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface CollectionViewController : UICollectionViewController
 
 @end
-
