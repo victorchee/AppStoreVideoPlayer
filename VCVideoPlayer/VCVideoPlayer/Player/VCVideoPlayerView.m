@@ -16,6 +16,21 @@
 
 @implementation VCVideoPlayerView
 
+- (void)setFatherView:(UIView *)fatherView {
+    _fatherView = fatherView;
+    
+    if (self.superview) {
+        [fatherView removeFromSuperview];
+    }
+    
+    [fatherView addSubview:self];
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    [fatherView.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
+    [fatherView.leftAnchor constraintEqualToAnchor:self.leftAnchor].active = YES;
+    [fatherView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
+    [fatherView.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
+}
+
 - (void)playVideoWithURL:(NSURL * _Nonnull)url controlView:(UIView  * _Nullable)controlView {
     if (!controlView) {
         controlView = [NSBundle.mainBundle loadNibNamed:NSStringFromClass([VCVideoControlView class]) owner:nil options:nil].firstObject;
@@ -33,15 +48,40 @@
 }
 
 - (void)fullscreenActionAnimated:(BOOL)animated completion:(dispatch_block_t)completionHandler {
+    UIWindow *window = UIApplication.sharedApplication.keyWindow;
     CGRect frameInWindow = [self convertRect:self.frame toView:nil];
     [self removeFromSuperview];
-    [UIApplication.sharedApplication.keyWindow addSubview:self];
+    [window addSubview:self];
     self.frame = frameInWindow;
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:window attribute:NSLayoutAttributeTop multiplier:1 constant:CGRectGetMinY(frameInWindow)];
+    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:window attribute:NSLayoutAttributeLeft multiplier:1 constant:CGRectGetMinX(frameInWindow)];
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:window attribute:NSLayoutAttributeBottom multiplier:1 constant: CGRectGetHeight(window.bounds) - CGRectGetMaxY(frameInWindow)];
+    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:window attribute:NSLayoutAttributeRight multiplier:1 constant: CGRectGetWidth(window.bounds) - CGRectGetMaxX(frameInWindow)];
+    [window addConstraints:@[topConstraint, leftConstraint, bottomConstraint, rightConstraint]];
     self.controlView.alpha = 0;
     
+    dispatch_block_t executeFullscreen = ^() {
+        CGRect screenBounds = UIScreen.mainScreen.bounds;
+        CGPoint screenCenter = CGPointMake(CGRectGetMidX(screenBounds), CGRectGetMidY(screenBounds));
+        self.bounds = screenBounds;
+        self.center = screenCenter;
+        if (self.fullscreenInterfaceOrientation == VCVideoPlayerFullscreenInterfaceOrientationLandscape) {
+            self.transform = CGAffineTransformMakeRotation(M_PI_2);
+            //        [UIApplication.sharedApplication setStatusBarOrientation:UIInterfaceOrientationLandscapeRight];
+        } else {
+            //        [UIApplication.sharedApplication setStatusBarOrientation:UIInterfaceOrientationPortrait];
+        }
+    };
+    
     if (animated) {
+        topConstraint.constant = 0;
+        leftConstraint.constant = 0;
+        bottomConstraint.constant = 0;
+        rightConstraint.constant = 0;
         [UIView animateWithDuration:0.35 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            [self exexuteFullscreen];
+            [window layoutIfNeeded];
+            self.transform = CGAffineTransformMakeRotation(M_PI_2);
         } completion:^(BOOL finished) {
             if (completionHandler) {
                 completionHandler();
@@ -51,7 +91,7 @@
             }];
         }];
     } else {
-        [self exexuteFullscreen];
+        executeFullscreen();
         if (completionHandler) {
             completionHandler();
         }
@@ -61,25 +101,12 @@
     }
 }
 
-- (void)exexuteFullscreen {
-    CGRect screenBounds = UIScreen.mainScreen.bounds;
-    CGPoint screenCenter = CGPointMake(CGRectGetMidX(screenBounds), CGRectGetMidY(screenBounds));
-    self.bounds = screenBounds;
-    self.center = screenCenter;
-    if (self.fullscreenInterfaceOrientation == VCVideoPlayerFullscreenInterfaceOrientationLandscape) {
-        self.transform = CGAffineTransformMakeRotation(M_PI_2);
-//        [UIApplication.sharedApplication setStatusBarOrientation:UIInterfaceOrientationLandscapeRight];
-    } else {
-//        [UIApplication.sharedApplication setStatusBarOrientation:UIInterfaceOrientationPortrait];
-    }
-}
-
 - (void)miniscreenActionAnimated:(BOOL)animated completion:(dispatch_block_t)completionHandler {
     self.controlView.alpha = 0;
     
     if (animated) {
         [UIView animateWithDuration:0.35 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            [self exexuteMiniscreen];
+            [self executeMiniscreen];
         } completion:^(BOOL finished) {
             [self finishMiniscreen];
             if (completionHandler) {
@@ -87,7 +114,7 @@
             }
         }];
     } else {
-        [self exexuteMiniscreen];
+        [self executeMiniscreen];
         [self finishMiniscreen];
         if (completionHandler) {
             completionHandler();
@@ -95,7 +122,7 @@
     }
 }
 
-- (void)exexuteMiniscreen {
+- (void)executeMiniscreen {
     CGRect screenBounds = UIScreen.mainScreen.bounds;
     CGPoint screenCenter = CGPointMake(CGRectGetMidX(screenBounds), CGRectGetMidY(screenBounds));
     self.bounds = screenBounds;

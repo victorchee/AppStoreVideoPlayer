@@ -55,14 +55,7 @@
     cell.playButtonTappedHandler = ^(UIButton *sender) {
         __strong typeof(weakCell) strongCell = weakCell;
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.playerView removeFromSuperview];
-        [strongCell.contentView addSubview:strongSelf.playerView];
-        
-        strongSelf.playerView.translatesAutoresizingMaskIntoConstraints = NO;
-        [strongSelf.playerView.topAnchor constraintEqualToAnchor:strongCell.contentView.topAnchor].active = YES;
-        [strongSelf.playerView.leftAnchor constraintEqualToAnchor:strongCell.contentView.leftAnchor].active = YES;
-        [strongSelf.playerView.bottomAnchor constraintEqualToAnchor:strongCell.contentView.bottomAnchor].active = YES;
-        [strongSelf.playerView.rightAnchor constraintEqualToAnchor:strongCell.contentView.rightAnchor].active = YES;
+        strongSelf.playerView.fatherView = strongCell.contentView;
         
         NSURL *url = [NSURL URLWithString:@"https://link"];
         [strongSelf.playerView playVideoWithURL:url controlView:nil];
