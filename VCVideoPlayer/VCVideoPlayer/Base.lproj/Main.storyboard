@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,12 +21,46 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <segue destination="QV9-91-E2U" kind="relationship" relationship="viewControllers" id="jWf-am-1DU"/>
                         <segue destination="T4R-kT-LEN" kind="relationship" relationship="viewControllers" id="djy-eG-MuI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--View-->
+        <scene sceneID="cUD-3F-dC3">
+            <objects>
+                <viewController id="QV9-91-E2U" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VD2-jf-8aH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdH-Wb-feG">
+                                <rect key="frame" x="0.0" y="228" width="374" height="210"/>
+                                <color key="backgroundColor" red="1" green="0.28627450980000002" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HdH-Wb-feG" secondAttribute="height" multiplier="16:9" id="BF7-5K-CCh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HdH-Wb-feG" firstAttribute="centerY" secondItem="VD2-jf-8aH" secondAttribute="centerY" id="IXU-LX-EDs"/>
+                            <constraint firstItem="HdH-Wb-feG" firstAttribute="leading" secondItem="dWR-1X-n07" secondAttribute="leading" id="VXr-Ru-72n"/>
+                            <constraint firstItem="HdH-Wb-feG" firstAttribute="centerX" secondItem="VD2-jf-8aH" secondAttribute="centerX" id="ovb-2b-7Fi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dWR-1X-n07"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="View" image="first" id="V6l-Lc-ouR"/>
+                    <connections>
+                        <outlet property="contentView" destination="HdH-Wb-feG" id="2LK-JN-BA8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUQ-tc-A3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-379"/>
         </scene>
         <!--Collection-->
         <scene sceneID="NCc-7H-Z9G">
@@ -78,6 +114,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
