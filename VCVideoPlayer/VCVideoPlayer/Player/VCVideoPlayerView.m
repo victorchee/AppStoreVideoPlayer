@@ -52,13 +52,12 @@
     CGRect frameInWindow = [self convertRect:self.frame toView:nil];
     [self removeFromSuperview];
     [window addSubview:self];
-    self.frame = frameInWindow;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:window attribute:NSLayoutAttributeTop multiplier:1 constant:CGRectGetMinY(frameInWindow)];
     NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:window attribute:NSLayoutAttributeLeft multiplier:1 constant:CGRectGetMinX(frameInWindow)];
-    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:window attribute:NSLayoutAttributeBottom multiplier:1 constant: CGRectGetHeight(window.bounds) - CGRectGetMaxY(frameInWindow)];
-    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:window attribute:NSLayoutAttributeRight multiplier:1 constant: CGRectGetWidth(window.bounds) - CGRectGetMaxX(frameInWindow)];
-    [window addConstraints:@[topConstraint, leftConstraint, bottomConstraint, rightConstraint]];
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant: CGRectGetWidth(frameInWindow)];
+    NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant: CGRectGetHeight(frameInWindow)];
+    [window addConstraints:@[topConstraint, leftConstraint, widthConstraint, heightConstraint]];
     self.controlView.alpha = 0;
     
     dispatch_block_t executeFullscreen = ^() {
@@ -68,20 +67,20 @@
         self.center = screenCenter;
         if (self.fullscreenInterfaceOrientation == VCVideoPlayerFullscreenInterfaceOrientationLandscape) {
             self.transform = CGAffineTransformMakeRotation(M_PI_2);
-            //        [UIApplication.sharedApplication setStatusBarOrientation:UIInterfaceOrientationLandscapeRight];
+            [UIApplication.sharedApplication setStatusBarOrientation:UIInterfaceOrientationLandscapeRight];
         } else {
-            //        [UIApplication.sharedApplication setStatusBarOrientation:UIInterfaceOrientationPortrait];
+            [UIApplication.sharedApplication setStatusBarOrientation:UIInterfaceOrientationPortrait];
         }
     };
-    
     if (animated) {
         topConstraint.constant = 0;
         leftConstraint.constant = 0;
-        bottomConstraint.constant = 0;
-        rightConstraint.constant = 0;
+        widthConstraint.constant = CGRectGetWidth(UIScreen.mainScreen.bounds);
+        heightConstraint.constant = CGRectGetHeight(UIScreen.mainScreen.bounds);
+//        self.center = window.center;
         [UIView animateWithDuration:0.35 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             [window layoutIfNeeded];
-            self.transform = CGAffineTransformMakeRotation(M_PI_2);
+//            self.transform = CGAffineTransformMakeRotation(M_PI_2);
         } completion:^(BOOL finished) {
             if (completionHandler) {
                 completionHandler();
@@ -99,6 +98,8 @@
             self.controlView.alpha = 1;
         }];
     }
+    
+    [UIApplication.sharedApplication setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
 }
 
 - (void)miniscreenActionAnimated:(BOOL)animated completion:(dispatch_block_t)completionHandler {

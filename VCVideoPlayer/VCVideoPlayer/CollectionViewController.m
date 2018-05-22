@@ -24,6 +24,7 @@
     
     // Do any additional setup after loading the view.
     self.playerView = [[VCVideoPlayerView alloc] init];
+    self.playerView.backgroundColor = [UIColor purpleColor];
 }
 
 - (void)didReceiveMemoryWarning {
