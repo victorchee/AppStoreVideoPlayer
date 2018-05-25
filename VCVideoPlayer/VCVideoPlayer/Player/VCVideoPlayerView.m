@@ -11,6 +11,7 @@
 
 @interface VCVideoPlayerView() <VCVideoControlDelegate> {
     CGRect originalFrame;
+    CGRect frameInWindow;
 }
 @property (assign, readwrite, nonatomic, getter=isFullscreen) BOOL fullscreen;
 @property (strong, nonatomic) UIView *controlView;
@@ -54,35 +55,44 @@
     UIWindow *window = UIApplication.sharedApplication.keyWindow;
     if (self.isFullscreen) {
         // Miniscreen
-                [self.fatherView addSubview:self];
+        [UIApplication.sharedApplication setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+//        [self.fatherView addSubview:self];
         self.controlView.alpha = 0;
         [UIView animateWithDuration:0.35 animations:^{
             self.transform = CGAffineTransformIdentity;
-            self.frame = self->originalFrame;
+            self.frame = self->frameInWindow;
         } completion:^(BOOL finished) {
-//            self.fatherView = self.fatherView;
+//            [self removeFromSuperview];
+//            self.frame = self->originalFrame;
 //            [self.fatherView addSubview:self];
-            self.frame = self.fatherView.bounds;
+            self.fatherView = self.fatherView;
             [UIView animateWithDuration:0.5 animations:^{
                 self.controlView.alpha = 1;
             }];
             self.fullscreen = NO;
         }];
+//        [UIDevice.currentDevice setValue:@(UIInterfaceOrientationPortrait) forKey:@"orientation"];
+        [UIApplication.sharedApplication setStatusBarOrientation:UIInterfaceOrientationPortrait animated:YES];
     } else {
         // Fullscreen
-        originalFrame = [self convertRect:self.frame toView:nil];
+        originalFrame = self.frame;
+        frameInWindow = [self.superview convertRect:self.frame toView:nil];
+        self.frame = frameInWindow;
         [window addSubview:self];
-        //        self.frame = originalFrame;
         self.controlView.alpha = 0;
         [UIView animateWithDuration:0.35 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             self.transform = CGAffineTransformMakeRotation(M_PI_2);
-            self.frame = UIScreen.mainScreen.bounds;
+            self.bounds = CGRectMake(0, 0, CGRectGetHeight(self.superview.bounds), CGRectGetWidth(self.superview.bounds));
+            self.center = CGPointMake(CGRectGetMidX(self.superview.bounds), CGRectGetMidY(self.superview.bounds));
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:0.5 animations:^{
                 self.controlView.alpha = 1;
             }];
+            [UIApplication.sharedApplication setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
             self.fullscreen = YES;
         }];
+//        [UIDevice.currentDevice setValue:@(UIInterfaceOrientationLandscapeRight) forKey:@"orientation"];
+        [UIApplication.sharedApplication setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
     }
 }
 
