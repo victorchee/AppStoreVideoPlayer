@@ -44,9 +44,19 @@
                                     <constraint firstAttribute="width" secondItem="HdH-Wb-feG" secondAttribute="height" multiplier="16:9" id="BF7-5K-CCh"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pum-r5-hXZ">
+                                <rect key="frame" x="151.5" y="318" width="71" height="30"/>
+                                <state key="normal" title="Fullscreen"/>
+                                <state key="selected" title="Miniscreen"/>
+                                <connections>
+                                    <action selector="fullscreenButtonTapped:" destination="QV9-91-E2U" eventType="touchUpInside" id="SfC-Ak-UEL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pum-r5-hXZ" firstAttribute="centerX" secondItem="VD2-jf-8aH" secondAttribute="centerX" id="51u-86-A7R"/>
+                            <constraint firstItem="pum-r5-hXZ" firstAttribute="centerY" secondItem="VD2-jf-8aH" secondAttribute="centerY" id="G2Y-xa-WTg"/>
                             <constraint firstItem="HdH-Wb-feG" firstAttribute="centerY" secondItem="VD2-jf-8aH" secondAttribute="centerY" id="IXU-LX-EDs"/>
                             <constraint firstItem="HdH-Wb-feG" firstAttribute="leading" secondItem="dWR-1X-n07" secondAttribute="leading" id="VXr-Ru-72n"/>
                             <constraint firstItem="HdH-Wb-feG" firstAttribute="centerX" secondItem="VD2-jf-8aH" secondAttribute="centerX" id="ovb-2b-7Fi"/>
