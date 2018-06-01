@@ -40,17 +40,21 @@
         // Miniscreen
     } else {
         // Fullscreen
+        [UIApplication.sharedApplication setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+        
         originalFrame = self.contentView.frame;
         frameInWindow = [self.view convertRect:self.contentView.frame toView:nil];
+        [self.contentView removeFromSuperview];
         self.contentView.frame = frameInWindow;
         [window addSubview:self.contentView];
-        [UIView animateWithDuration:0.35 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             self.contentView.transform = CGAffineTransformMakeRotation(M_PI_2);
             self.contentView.bounds = CGRectMake(0, 0, CGRectGetHeight(self.contentView.superview.bounds), CGRectGetWidth(self.contentView.superview.bounds));
             self.contentView.center = CGPointMake(CGRectGetMidX(self.contentView.superview.bounds), CGRectGetMidY(self.contentView.superview.bounds));
-        } completion:^(BOOL finished) {
-            [UIApplication.sharedApplication setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+            self.contentView.layer.anchorPoint = CGPointMake(0.5, 0.5);
+            
             self.contentView.frame = self.contentView.superview.bounds;
+        } completion:^(BOOL finished) {
             sender.selected = YES;
         }];
         //        [UIDevice.currentDevice setValue:@(UIInterfaceOrientationLandscapeRight) forKey:@"orientation"];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,24 +39,34 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdH-Wb-feG">
                                 <rect key="frame" x="0.0" y="228" width="374" height="210"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WkC-mr-urM">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="210"/>
+                                        <color key="backgroundColor" red="0.25882352939999997" green="0.88235294119999996" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pum-r5-hXZ">
+                                        <rect key="frame" x="151" y="90" width="71" height="30"/>
+                                        <state key="normal" title="Fullscreen"/>
+                                        <state key="selected" title="Miniscreen"/>
+                                        <connections>
+                                            <action selector="fullscreenButtonTapped:" destination="QV9-91-E2U" eventType="touchUpInside" id="SfC-Ak-UEL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.28627450980000002" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HdH-Wb-feG" secondAttribute="height" multiplier="16:9" id="BF7-5K-CCh"/>
+                                    <constraint firstAttribute="trailing" secondItem="WkC-mr-urM" secondAttribute="trailing" id="QYr-xg-TNu"/>
+                                    <constraint firstAttribute="bottom" secondItem="WkC-mr-urM" secondAttribute="bottom" id="UdE-00-BR2"/>
+                                    <constraint firstItem="pum-r5-hXZ" firstAttribute="centerY" secondItem="HdH-Wb-feG" secondAttribute="centerY" id="VpU-a3-juT"/>
+                                    <constraint firstItem="WkC-mr-urM" firstAttribute="leading" secondItem="HdH-Wb-feG" secondAttribute="leading" id="Z28-gC-QaZ"/>
+                                    <constraint firstItem="WkC-mr-urM" firstAttribute="top" secondItem="HdH-Wb-feG" secondAttribute="top" id="bqr-Ro-3Uf"/>
+                                    <constraint firstItem="pum-r5-hXZ" firstAttribute="centerX" secondItem="HdH-Wb-feG" secondAttribute="centerX" id="pCV-ZI-A0J"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pum-r5-hXZ">
-                                <rect key="frame" x="151.5" y="318" width="71" height="30"/>
-                                <state key="normal" title="Fullscreen"/>
-                                <state key="selected" title="Miniscreen"/>
-                                <connections>
-                                    <action selector="fullscreenButtonTapped:" destination="QV9-91-E2U" eventType="touchUpInside" id="SfC-Ak-UEL"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pum-r5-hXZ" firstAttribute="centerX" secondItem="VD2-jf-8aH" secondAttribute="centerX" id="51u-86-A7R"/>
-                            <constraint firstItem="pum-r5-hXZ" firstAttribute="centerY" secondItem="VD2-jf-8aH" secondAttribute="centerY" id="G2Y-xa-WTg"/>
                             <constraint firstItem="HdH-Wb-feG" firstAttribute="centerY" secondItem="VD2-jf-8aH" secondAttribute="centerY" id="IXU-LX-EDs"/>
                             <constraint firstItem="HdH-Wb-feG" firstAttribute="leading" secondItem="dWR-1X-n07" secondAttribute="leading" id="VXr-Ru-72n"/>
                             <constraint firstItem="HdH-Wb-feG" firstAttribute="centerX" secondItem="VD2-jf-8aH" secondAttribute="centerX" id="ovb-2b-7Fi"/>

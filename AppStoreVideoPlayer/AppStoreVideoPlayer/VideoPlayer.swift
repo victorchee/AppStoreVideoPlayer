@@ -11,7 +11,7 @@ import AVFoundation
 
 class VideoPlayer {
     private var player:AVPlayer
-    var playerLayer: AVPlayerLayer
+    private(set) var playerLayer: AVPlayerLayer
     
     var isMuted: Bool {
         get {
@@ -23,9 +23,7 @@ class VideoPlayer {
     }
     
     init(_ url: URL) {
-        let url = Bundle.main.url(forResource: "hubblecast", withExtension: "m4v")!
         player = AVPlayer(url: url)
-        
         playerLayer = AVPlayerLayer(player: player)
     }
     

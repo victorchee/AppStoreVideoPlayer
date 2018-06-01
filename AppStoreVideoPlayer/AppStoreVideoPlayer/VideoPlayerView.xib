@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VideoPlayerView" customModule="AppStoreVideoPlayer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hd7-ys-Xa7">
+                    <rect key="frame" x="0.0" y="189" width="375" height="44"/>
+                    <subviews>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbr-Zf-Zm7">
+                            <rect key="frame" x="304" y="0.0" width="71" height="44"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kth-JV-8O2">
+                                <rect key="frame" x="0.0" y="0.0" width="71" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQe-G2-bky">
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="44"/>
+                                        <state key="normal" title="Fullscreen"/>
+                                        <connections>
+                                            <action selector="fullscreenButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZaJ-nx-NPl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="XQe-G2-bky" secondAttribute="bottom" id="AfA-CZ-5BU"/>
+                                    <constraint firstItem="XQe-G2-bky" firstAttribute="top" secondItem="Kth-JV-8O2" secondAttribute="top" id="T9S-f5-Lhh"/>
+                                    <constraint firstItem="XQe-G2-bky" firstAttribute="leading" secondItem="Kth-JV-8O2" secondAttribute="leading" id="ebi-I4-tNc"/>
+                                    <constraint firstAttribute="trailing" secondItem="XQe-G2-bky" secondAttribute="trailing" id="wqh-ZT-5AA"/>
+                                </constraints>
+                            </view>
+                            <blurEffect style="light"/>
+                        </visualEffectView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="sbr-Zf-Zm7" secondAttribute="trailing" id="Mg2-Pu-2A7"/>
+                        <constraint firstAttribute="height" constant="44" id="OtV-At-SeE"/>
+                        <constraint firstItem="sbr-Zf-Zm7" firstAttribute="top" secondItem="Hd7-ys-Xa7" secondAttribute="top" id="eIQ-Gz-g2J"/>
+                        <constraint firstAttribute="bottom" secondItem="sbr-Zf-Zm7" secondAttribute="bottom" id="oRf-LQ-iMB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Hd7-ys-Xa7" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="60w-rG-IpD"/>
+                <constraint firstItem="Hd7-ys-Xa7" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="tRb-oG-qAz"/>
+                <constraint firstItem="Hd7-ys-Xa7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="upr-fP-qex"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="24.5" y="268.5"/>
+        </view>
+    </objects>
+</document>
