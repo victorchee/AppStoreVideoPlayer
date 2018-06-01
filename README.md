@@ -1,2 +1,2 @@
-# VCVideoPlayer
-Video player for iOS.
+# AppStoreVideoPlayer
+Video player like AppStore.
