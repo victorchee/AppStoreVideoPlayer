@@ -90,14 +90,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qc-0O-TyU">
-                                <rect key="frame" x="8" y="28" width="75" height="30"/>
+                                <rect key="frame" x="8" y="28" width="44" height="44"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="i9K-gx-8zm">
-                                    <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ky-dF-bNY">
-                                            <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
-                                            <state key="normal" title="Miniscreen"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ky-dF-bNY">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="4Dm-TB-hgN"/>
+                                                <constraint firstAttribute="width" secondItem="9ky-dF-bNY" secondAttribute="height" id="ENv-F8-QZt"/>
+                                            </constraints>
+                                            <state key="normal" image="miniscreen"/>
                                             <connections>
                                                 <action selector="fullscreenButtonTapped:" destination="1fy-uY-Rfw" eventType="touchUpInside" id="YEB-pk-exb"/>
                                             </connections>
@@ -113,14 +117,18 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0d-aI-izK">
-                                <rect key="frame" x="332" y="28" width="35" height="30"/>
+                                <rect key="frame" x="323" y="28" width="44" height="44"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PiR-FU-OLT">
-                                    <rect key="frame" x="0.0" y="0.0" width="35" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ni6-Oa-zq7">
-                                            <rect key="frame" x="0.0" y="0.0" width="35" height="30"/>
-                                            <state key="normal" title="Mute"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ni6-Oa-zq7">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Ni6-Oa-zq7" secondAttribute="height" multiplier="1:1" id="daW-5v-NUp"/>
+                                                <constraint firstAttribute="width" constant="44" id="esA-kO-zQK"/>
+                                            </constraints>
+                                            <state key="normal" image="unmute"/>
                                             <connections>
                                                 <action selector="muteButtonTapped:" destination="1fy-uY-Rfw" eventType="touchUpInside" id="04W-GX-FRk"/>
                                             </connections>
@@ -136,14 +144,18 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfJ-f1-urk">
-                                <rect key="frame" x="8" y="629" width="42" height="30"/>
+                                <rect key="frame" x="8" y="615" width="44" height="44"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="usg-Ig-8YZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paf-PC-G60">
-                                            <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
-                                            <state key="normal" title="Pause"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paf-PC-G60">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="9hV-ul-jvO"/>
+                                                <constraint firstAttribute="width" secondItem="Paf-PC-G60" secondAttribute="height" id="p9w-ok-caJ"/>
+                                            </constraints>
+                                            <state key="normal" image="pause"/>
                                             <connections>
                                                 <action selector="pauseButtonTapped:" destination="1fy-uY-Rfw" eventType="touchUpInside" id="GLF-ve-bSe"/>
                                             </connections>
@@ -159,7 +171,7 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="r0d-aI-izK" firstAttribute="top" secondItem="w9b-db-vJj" secondAttribute="top" constant="8" id="LDa-NJ-qXE"/>
@@ -204,6 +216,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="miniscreen" width="15" height="15"/>
+        <image name="pause" width="12" height="19"/>
         <image name="second" width="30" height="30"/>
         <image name="tabBarItem:acW-dT-cKf:image" width="30" height="30">
             <mutableData key="keyedArchiveRepresentation">
@@ -341,5 +355,6 @@ BwwJDBIMGAwgDCIMJAwmDCgMLR2ZHZsdoB2oHasdsB24HbsdzR3QHdUAAAAAAAACAQAAAAAAAABlAAAA
 AAAAAAAAAAAAAAAd1w
 </mutableData>
         </image>
+        <image name="unmute" width="22" height="18"/>
     </resources>
 </document>

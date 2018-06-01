@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,47 +17,94 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hd7-ys-Xa7">
-                    <rect key="frame" x="0.0" y="189" width="375" height="44"/>
-                    <subviews>
-                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbr-Zf-Zm7">
-                            <rect key="frame" x="304" y="0.0" width="71" height="44"/>
-                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kth-JV-8O2">
-                                <rect key="frame" x="0.0" y="0.0" width="71" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQe-G2-bky">
-                                        <rect key="frame" x="0.0" y="0.0" width="71" height="44"/>
-                                        <state key="normal" title="Fullscreen"/>
-                                        <connections>
-                                            <action selector="fullscreenButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZaJ-nx-NPl"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yj-t6-4C7">
+                    <rect key="frame" x="165" y="94.5" width="44" height="44"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LYC-nR-6oH">
+                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7r-IH-SoI">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="XQe-G2-bky" secondAttribute="bottom" id="AfA-CZ-5BU"/>
-                                    <constraint firstItem="XQe-G2-bky" firstAttribute="top" secondItem="Kth-JV-8O2" secondAttribute="top" id="T9S-f5-Lhh"/>
-                                    <constraint firstItem="XQe-G2-bky" firstAttribute="leading" secondItem="Kth-JV-8O2" secondAttribute="leading" id="ebi-I4-tNc"/>
-                                    <constraint firstAttribute="trailing" secondItem="XQe-G2-bky" secondAttribute="trailing" id="wqh-ZT-5AA"/>
+                                    <constraint firstAttribute="width" secondItem="d7r-IH-SoI" secondAttribute="height" id="Iur-em-UxD"/>
+                                    <constraint firstAttribute="width" constant="44" id="xn8-nL-Rmk"/>
                                 </constraints>
-                            </view>
-                            <blurEffect style="light"/>
-                        </visualEffectView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="sbr-Zf-Zm7" secondAttribute="trailing" id="Mg2-Pu-2A7"/>
-                        <constraint firstAttribute="height" constant="44" id="OtV-At-SeE"/>
-                        <constraint firstItem="sbr-Zf-Zm7" firstAttribute="top" secondItem="Hd7-ys-Xa7" secondAttribute="top" id="eIQ-Gz-g2J"/>
-                        <constraint firstAttribute="bottom" secondItem="sbr-Zf-Zm7" secondAttribute="bottom" id="oRf-LQ-iMB"/>
-                    </constraints>
-                </view>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-4" maxY="0.0"/>
+                                <state key="normal" image="play"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="d7r-IH-SoI" secondAttribute="bottom" id="EU2-ko-Jrh"/>
+                            <constraint firstItem="d7r-IH-SoI" firstAttribute="leading" secondItem="LYC-nR-6oH" secondAttribute="leading" id="RSx-Q2-c3i"/>
+                            <constraint firstItem="d7r-IH-SoI" firstAttribute="top" secondItem="LYC-nR-6oH" secondAttribute="top" id="r8d-Gz-p2B"/>
+                            <constraint firstAttribute="trailing" secondItem="d7r-IH-SoI" secondAttribute="trailing" id="tn4-rc-Dd7"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbr-Zf-Zm7">
+                    <rect key="frame" x="323" y="181" width="44" height="44"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kth-JV-8O2">
+                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQe-G2-bky">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XQe-G2-bky" secondAttribute="height" id="B9R-mQ-2Az"/>
+                                    <constraint firstAttribute="width" constant="44" id="GC8-1h-Sf5"/>
+                                </constraints>
+                                <state key="normal" image="mute"/>
+                                <connections>
+                                    <action selector="fullscreenButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZaJ-nx-NPl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="XQe-G2-bky" secondAttribute="bottom" id="AfA-CZ-5BU"/>
+                            <constraint firstItem="XQe-G2-bky" firstAttribute="top" secondItem="Kth-JV-8O2" secondAttribute="top" id="T9S-f5-Lhh"/>
+                            <constraint firstItem="XQe-G2-bky" firstAttribute="leading" secondItem="Kth-JV-8O2" secondAttribute="leading" id="ebi-I4-tNc"/>
+                            <constraint firstAttribute="trailing" secondItem="XQe-G2-bky" secondAttribute="trailing" id="wqh-ZT-5AA"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEu-u5-O4I">
+                    <rect key="frame" x="8" y="181" width="44" height="44"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lL7-yv-1f4">
+                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAj-Sn-LSk">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bAj-Sn-LSk" secondAttribute="height" id="VNJ-li-AFX"/>
+                                    <constraint firstAttribute="width" constant="44" id="jxG-dM-UoT"/>
+                                </constraints>
+                                <state key="normal" image="fullscreen"/>
+                                <connections>
+                                    <action selector="fullscreenButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="uzT-Z2-rl2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="bAj-Sn-LSk" firstAttribute="top" secondItem="lL7-yv-1f4" secondAttribute="top" id="Buo-az-pfW"/>
+                            <constraint firstItem="bAj-Sn-LSk" firstAttribute="leading" secondItem="lL7-yv-1f4" secondAttribute="leading" id="Z6I-mU-qcs"/>
+                            <constraint firstAttribute="trailing" secondItem="bAj-Sn-LSk" secondAttribute="trailing" id="lGv-Tp-sGG"/>
+                            <constraint firstAttribute="bottom" secondItem="bAj-Sn-LSk" secondAttribute="bottom" id="raM-sW-cxB"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Hd7-ys-Xa7" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="60w-rG-IpD"/>
-                <constraint firstItem="Hd7-ys-Xa7" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="tRb-oG-qAz"/>
-                <constraint firstItem="Hd7-ys-Xa7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="upr-fP-qex"/>
+                <constraint firstItem="3yj-t6-4C7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="46a-1q-Koy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="sbr-Zf-Zm7" secondAttribute="bottom" constant="8" id="P4h-oL-CQe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gEu-u5-O4I" secondAttribute="bottom" constant="8" id="VA2-nT-Cxb"/>
+                <constraint firstItem="3yj-t6-4C7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="XRr-gn-6gW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sbr-Zf-Zm7" secondAttribute="trailing" constant="8" id="c8V-Uc-XP7"/>
+                <constraint firstItem="gEu-u5-O4I" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="xUm-9V-M54"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
@@ -65,4 +113,9 @@
             <point key="canvasLocation" x="24.5" y="268.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="fullscreen" width="15" height="15"/>
+        <image name="mute" width="22" height="18"/>
+        <image name="play" width="18" height="20"/>
+    </resources>
 </document>
