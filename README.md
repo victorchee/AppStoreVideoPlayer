@@ -1,2 +1,2 @@
 # AppStoreVideoPlayer
-Video player like AppStore.
+Video player like AppStore's.
