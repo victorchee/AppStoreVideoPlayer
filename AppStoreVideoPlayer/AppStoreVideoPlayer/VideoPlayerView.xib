@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yj-t6-4C7">
+                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yj-t6-4C7">
                     <rect key="frame" x="165" y="94.5" width="44" height="44"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LYC-nR-6oH">
                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -29,8 +29,11 @@
                                     <constraint firstAttribute="width" secondItem="d7r-IH-SoI" secondAttribute="height" id="Iur-em-UxD"/>
                                     <constraint firstAttribute="width" constant="44" id="xn8-nL-Rmk"/>
                                 </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-4" maxY="0.0"/>
                                 <state key="normal" image="play"/>
+                                <state key="selected" image="pause"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="OrX-lF-eq2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -41,35 +44,13 @@
                         </constraints>
                     </view>
                     <blurEffect style="light"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </visualEffectView>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbr-Zf-Zm7">
-                    <rect key="frame" x="323" y="181" width="44" height="44"/>
-                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kth-JV-8O2">
-                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQe-G2-bky">
-                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="XQe-G2-bky" secondAttribute="height" id="B9R-mQ-2Az"/>
-                                    <constraint firstAttribute="width" constant="44" id="GC8-1h-Sf5"/>
-                                </constraints>
-                                <state key="normal" image="mute"/>
-                                <connections>
-                                    <action selector="fullscreenButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZaJ-nx-NPl"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="XQe-G2-bky" secondAttribute="bottom" id="AfA-CZ-5BU"/>
-                            <constraint firstItem="XQe-G2-bky" firstAttribute="top" secondItem="Kth-JV-8O2" secondAttribute="top" id="T9S-f5-Lhh"/>
-                            <constraint firstItem="XQe-G2-bky" firstAttribute="leading" secondItem="Kth-JV-8O2" secondAttribute="leading" id="ebi-I4-tNc"/>
-                            <constraint firstAttribute="trailing" secondItem="XQe-G2-bky" secondAttribute="trailing" id="wqh-ZT-5AA"/>
-                        </constraints>
-                    </view>
-                    <blurEffect style="light"/>
-                </visualEffectView>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEu-u5-O4I">
+                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEu-u5-O4I">
                     <rect key="frame" x="8" y="181" width="44" height="44"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lL7-yv-1f4">
                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -82,6 +63,7 @@
                                     <constraint firstAttribute="width" constant="44" id="jxG-dM-UoT"/>
                                 </constraints>
                                 <state key="normal" image="fullscreen"/>
+                                <state key="selected" image="miniscreen"/>
                                 <connections>
                                     <action selector="fullscreenButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="uzT-Z2-rl2"/>
                                 </connections>
@@ -95,6 +77,44 @@
                         </constraints>
                     </view>
                     <blurEffect style="light"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </visualEffectView>
+                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbr-Zf-Zm7">
+                    <rect key="frame" x="323" y="181" width="44" height="44"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kth-JV-8O2">
+                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQe-G2-bky">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XQe-G2-bky" secondAttribute="height" id="B9R-mQ-2Az"/>
+                                    <constraint firstAttribute="width" constant="44" id="GC8-1h-Sf5"/>
+                                </constraints>
+                                <state key="normal" image="mute"/>
+                                <state key="selected" image="unmute"/>
+                                <connections>
+                                    <action selector="muteButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="KHS-Ca-AIg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="XQe-G2-bky" secondAttribute="bottom" id="AfA-CZ-5BU"/>
+                            <constraint firstItem="XQe-G2-bky" firstAttribute="top" secondItem="Kth-JV-8O2" secondAttribute="top" id="T9S-f5-Lhh"/>
+                            <constraint firstItem="XQe-G2-bky" firstAttribute="leading" secondItem="Kth-JV-8O2" secondAttribute="leading" id="ebi-I4-tNc"/>
+                            <constraint firstAttribute="trailing" secondItem="XQe-G2-bky" secondAttribute="trailing" id="wqh-ZT-5AA"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="light"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </visualEffectView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,12 +130,20 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="fullscreenButton" destination="bAj-Sn-LSk" id="yfI-PQ-Qo5"/>
+                <outlet property="muteButton" destination="XQe-G2-bky" id="8Nm-IA-qP1"/>
+                <outlet property="playButton" destination="d7r-IH-SoI" id="ef8-8M-q4a"/>
+            </connections>
             <point key="canvasLocation" x="24.5" y="268.5"/>
         </view>
     </objects>
     <resources>
         <image name="fullscreen" width="15" height="15"/>
+        <image name="miniscreen" width="15" height="15"/>
         <image name="mute" width="22" height="18"/>
+        <image name="pause" width="12" height="19"/>
         <image name="play" width="18" height="20"/>
+        <image name="unmute" width="22" height="18"/>
     </resources>
 </document>

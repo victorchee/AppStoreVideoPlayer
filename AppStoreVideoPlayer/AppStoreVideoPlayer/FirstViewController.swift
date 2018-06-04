@@ -39,10 +39,5 @@ class FirstViewController: UIViewController {
         super.viewDidLayoutSubviews()
         playerView?.frame = contentView.bounds
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        player.play()
-    }
 }
 

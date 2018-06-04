@@ -13,12 +13,22 @@ class VideoPlayer {
     private var player:AVPlayer
     private(set) var playerLayer: AVPlayerLayer
     
-    var isMuted: Bool {
-        get {
-            return player.isMuted
+    weak var playbackDelegate: VideoPlayerPlaybackDelegate?
+    
+    enum PlayerStatus {
+        case playing, paused, buffering
+    }
+    private(set) var status = PlayerStatus.paused {
+        didSet {
+            playbackDelegate?.playerStatusDidChange(self, status: self.status)
         }
+    }
+    
+    var isMuted: Bool {
+        get { return player.isMuted }
         set {
             player.isMuted = newValue
+            playbackDelegate?.playerMuteDidChange(self, muted: self.isMuted)
         }
     }
     
@@ -29,9 +39,20 @@ class VideoPlayer {
     
     func play() {
         player.play()
+        status = .playing
+        playbackDelegate?.playerDidPlay(self)
     }
     
     func pause() {
         player.pause()
+        status = .paused
+        playbackDelegate?.playerDidPause(self)
     }
+}
+
+protocol VideoPlayerPlaybackDelegate: AnyObject {
+    func playerDidPlay(_ player: VideoPlayer)
+    func playerDidPause(_ player: VideoPlayer)
+    func playerStatusDidChange(_ player: VideoPlayer, status: VideoPlayer.PlayerStatus)
+    func playerMuteDidChange(_ player: VideoPlayer, muted: Bool)
 }
